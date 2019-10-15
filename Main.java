@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		// original input {10,80,3,19,14,7,5,12}
-		int[] question1 = {8,7,6,5,4,3,2,1};
+		int[] question1 = {10,80,3,19,14,7,5,12};
 		int[] question2 = new int[100];
 		int[] question3 = new int[1000];
 	
@@ -101,7 +101,6 @@ public class Main {
 		quickSort(x,0,x.length-1);
 		printArray(x);
 		System.out.println("Average case of 100 values ");
-		setArray(x);
 		rearrangeArray(x);
 		printArray(x);
 		quickSort(x,0,x.length-1);
@@ -115,19 +114,17 @@ public class Main {
 	}
 
 	public static void case1(int[] x) {
-		System.out.println("Worst case of 8 values ");
+		System.out.println("Worst case of 8 values ");  
+		descendingOrder(x);	
 		printArray(x);
 		quickSort(x,0,x.length-1);
 		printArray(x);
 		System.out.println("Average case of 8 values ");
-		setArray(x);
 		printArray(x);
 		quickSort(x,0,x.length-1);
 		printArray(x);
 		System.out.println("Best case of 8 values ");
-		for(int i = 0; i < x.length; i++) {
-			x[i] = i + 1;
-		}
+		quickSort(x,0,x.length-1);
 		printArray(x);
 		quickSort(x,0,x.length-1);
 		printArray(x);
@@ -141,7 +138,6 @@ public class Main {
 		quickSort(x,0,x.length-1);
 		printArray(x);
 		System.out.println("Average case of 1000 values ");
-		setArray(x);
 		rearrangeArray(x);
 		printArray(x);
 		quickSort(x,0,x.length-1);
@@ -154,19 +150,18 @@ public class Main {
 		System.out.println();
 	}
 	
-	
-	
-	public static void setArray(int[] x) {
-		x[0] = 3;
-		x[1] = 7;
-		x[2] = 4;
-		x[3] = 8;
-		x[4] = 1;
-		x[5] = 6;
-		x[6] = 2;
-		x[7] = 5;
+	public static void descendingOrder(int[] x) {
+		int swapSlot= x.length-1;
+		quickSort(x,0,x.length-1);
+		for(int i = 0; i < swapSlot; i++) {
+			int temp;
+			
+			temp = x[i];
+			x[i] = x[swapSlot];
+			x[swapSlot] = temp;
+			swapSlot--;
+		}
 		
-				
 	}
 	
 	public static void rearrangeArray(int[] x) {
@@ -182,6 +177,8 @@ public class Main {
 			x[i] = x[temp];
 			x[temp] = swapTempNum;
 		}
+		
+	
 	}
 	
 }
