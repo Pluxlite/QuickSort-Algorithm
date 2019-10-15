@@ -94,6 +94,25 @@ public class Main {
 		}
 	}
 	
+	public static void case1(int[] x) {
+		System.out.println("Worst case of 8 values ");  
+		descendingOrder(x);	
+		printArray(x);
+		quickSort(x,0,x.length-1);
+		printArray(x);
+		resetArray(x);
+		System.out.println("Average case of 8 values ");
+		printArray(x);
+		quickSort(x,0,x.length-1);
+		printArray(x);
+		System.out.println("Best case of 8 values ");
+		quickSort(x,0,x.length-1);
+		printArray(x);
+		quickSort(x,0,x.length-1);
+		printArray(x);
+		System.out.println();
+	}
+	
 	public static void case2(int[] x) {
 		System.out.println("Worst case of 100 values ");
 		populateDescending(x);
@@ -107,24 +126,6 @@ public class Main {
 		printArray(x);
 		System.out.println("Best case of 100 values ");
 		populateAscending(x);
-		printArray(x);
-		quickSort(x,0,x.length-1);
-		printArray(x);
-		System.out.println();
-	}
-
-	public static void case1(int[] x) {
-		System.out.println("Worst case of 8 values ");  
-		descendingOrder(x);	
-		printArray(x);
-		quickSort(x,0,x.length-1);
-		printArray(x);
-		System.out.println("Average case of 8 values ");
-		printArray(x);
-		quickSort(x,0,x.length-1);
-		printArray(x);
-		System.out.println("Best case of 8 values ");
-		quickSort(x,0,x.length-1);
 		printArray(x);
 		quickSort(x,0,x.length-1);
 		printArray(x);
@@ -179,6 +180,17 @@ public class Main {
 		}
 		
 	
+	}
+	
+	public static void resetArray(int[] x) {
+		x[0] = 10;
+		x[1] = 80;
+		x[2] = 3;
+		x[3] = 19;
+		x[4] = 14;
+		x[5] = 7;
+		x[6] = 5;
+		x[7] = 12;
 	}
 	
 }
